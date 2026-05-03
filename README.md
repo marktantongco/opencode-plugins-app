@@ -1,27 +1,33 @@
 # OpenCode Plugins Editorial Web App
 
 <p align="center">
+  <a href="https://github.com/marktantongco/opencode-plugins-app/actions">
+    <img src="https://img.shields.io/badge/Status-Active-green?style=for-the-badge" alt="Status">
+  </a>
   <img src="https://img.shields.io/badge/Tech-HTML%20%2B%20Tailwind%20%2B%20GSAP-blue?style=for-the-badge" alt="Tech Stack">
-  <img src="https://img.shields.io/badge/Status-Active-green?style=for-the-badge" alt="Status">
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/OpenCode-2026-orange?style=for-the-badge" alt="OpenCode 2026">
 </p>
 
-An interactive editorial-style web application showcasing the **Top 10 OpenCode Plugins** with beautiful GSAP animations and a modern dark theme. Built with accessibility and performance in mind.
+<p align="center">
+  <a href="https://marktantongco.github.io/opencode-plugins-app/">
+    <img src="https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=flat&logo=github" alt="GitHub Pages">
+  </a>
+  <a href="https://opencode-plugins-app.vercel.app">
+    <img src="https://img.shields.io/badge/Vercel-Live-black?style=flat&logo=vercel" alt="Vercel">
+  </a>
+</p>
 
-![OpenCode Plugins App Screenshot](https://via.placeholder.com/800x400/0f172a/38bdf8?text=OpenCode+Plugins+Editorial+Layout)
+An interactive editorial-style web application showcasing the **Top 10 OpenCode Plugins** with beautiful GSAP animations and a modern dark theme. Built with accessibility and performance in mind.
 
 ---
 
-## ✨ Features
+## ✨ Live Demo
 
-- **Editorial Layout** — Magazine-style design with typography focus
-- **GSAP Animations** — Smooth scroll-triggered animations, staggered reveals, parallax effects
-- **Interactive Cards** — Click to expand plugin details with features and install commands
-- **Category Filtering** — Filter plugins by category (Token Optimization, Multi-Agent, Reliability, etc.)
-- **Responsive Design** — Mobile-first, works on all screen sizes
-- **Accessibility** — WCAG 2.1 AA compliant with reduced-motion support
-- **Dark Theme** — Professional developer-focused aesthetic
+| Platform | URL | Status |
+|----------|-----|--------|
+| **GitHub Pages** | https://marktantongco.github.io/opencode-plugins-app/ | ✅ Live |
+| **Vercel** | https://opencode-plugins-app.vercel.app | ✅ Live |
 
 ---
 
@@ -36,14 +42,17 @@ An interactive editorial-style web application showcasing the **Top 10 OpenCode 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/opencode-plugins-app.git
+git clone https://github.com/marktantongco/opencode-plugins-app.git
 cd opencode-plugins-app
 
 # Install dependencies
 npm install
 
-# Start the server
+# Start the server (for fullstack mode)
 npm start
+
+# Or serve static files directly
+npx serve public
 ```
 
 The app will be available at `http://localhost:3000`
@@ -54,18 +63,18 @@ The app will be available at `http://localhost:3000`
 
 ```
 opencode-plugins-app/
-├── server.js              # Express backend server
-├── package.json           # Dependencies
+├── server.js                   # Express backend server
+├── package.json                # Dependencies
+├── vercel.json                 # Vercel deployment config
 ├── data/
-│   └── plugins.json      # Plugin data (10 plugins + ecosystem)
+│   └── plugins.json            # Plugin data (10 plugins + ecosystem)
 ├── public/
-│   ├── index.html        # Main HTML with editorial layout
-│   ├── css/              # (reserved for custom CSS)
+│   ├── index.html             # Main HTML with editorial layout
 │   └── js/
-│       ├── gsap-animations.js  # GSAP animation logic
-│       └── app.js              # App logic & data rendering
-├── PLUGINS.md            # Markdown reference guide
-└── README.md             # This file
+│       ├── gsap-animations.js # GSAP animation logic
+│       └── app.js             # App logic & data rendering
+├── PLUGINS.md                  # Markdown reference guide
+└── README.md                   # This file
 ```
 
 ---
@@ -110,7 +119,7 @@ This project follows the **UI/UX Pro Max** design guidelines:
 
 ---
 
-## 📡 API Endpoints
+## 📡 API Endpoints (Fullstack Mode)
 
 | Endpoint | Description |
 |----------|-------------|
@@ -149,6 +158,52 @@ scrollTrigger: {
 // Easing
 ease: 'power2.out' (default)
 ease: 'back.out(1.2)' (cards)
+```
+
+---
+
+## 🚢 Deployment
+
+### Option 1: GitHub Pages (Recommended for Static)
+
+**Already deployed:** https://marktantongco.github.io/opencode-plugins-app/
+
+To redeploy:
+
+```bash
+# Ensure GitHub Pages is enabled in repo settings
+# Source: GitHub Actions (workflow included below)
+git add .
+git commit -m "deploy: Update for GitHub Pages"
+git push
+```
+
+The workflow automatically deploys on push to `main`.
+
+### Option 2: Vercel (Recommended for Fullstack)
+
+**Already deployed:** https://opencode-plugins-app.vercel.app/
+
+To redeploy:
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
+```
+
+Or connect your GitHub repo at https://vercel.com for auto-deploy.
+
+### Option 3: Netlify
+
+```bash
+# Install Netlify CLI
+npm i -g netlify-cli
+
+# Deploy
+netlify deploy --prod --dir=public
 ```
 
 ---
