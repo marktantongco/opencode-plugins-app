@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "title": "Top 10 OpenCode Plugins",
+    "description": "Best recommended plugins for OpenCode AI coding agent",
+    "lastUpdated": "2026-05-03",
+    "totalPlugins": 10
+  },
+  "plugins": [
+    {
+      "rank": 1,
+      "name": "opencode-dynamic-context-pruning",
+      "displayName": "Dynamic Context Pruning (DCP)",
+      "shortName": "DCP",
+      "description": "Intelligently manages conversation context to optimize token usage. Automatically reduces token usage by pruning obsolete tool outputs and replacing closed conversation content with high-fidelity technical summaries.",
+      "longDescription": "DCP reduces context size through a compress tool and automatic cleanup. Your session history is never modified — DCP replaces pruned content with placeholders before sending requests to your LLM. Compress is a tool exposed to your model that replaces closed, stale conversation content with high-fidelity technical summaries.",
+      "stars": 2348,
+      "downloads": "2.3k",
+      "rating": 4.8,
+      "category": "token-optimization",
+      "categoryLabel": "Token Optimization",
+      "features": [
+        "Automatic context compression",
+        "Token usage analysis",
+        "Slash commands (/dcp context, /dcp stats, /dcp sweep)",
+        "Manual mode toggle",
+        "Decompress/recompress support"
+      ],
+      "installCommand": "npm install opencode-dynamic-context-pruning",
+      "npmPackage": "opencode-dynamic-context-pruning",
+      "githubUrl": "https://github.com/Opencode-DCP/opencode-dynamic-context-pruning",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
+      "useCase": "Essential for long coding sessions to reduce token costs by 40-60%"
+    },
+    {
+      "rank": 2,
+      "name": "opencode-morph-plugin",
+      "displayName": "Morph Fast Apply",
+      "shortName": "Morph",
+      "description": "Fast Apply editing with 10,500+ tok/s code merging, WarpGrep codebase search, and automatic context compaction via Morph API.",
+      "longDescription": "Four powerful tools: Fast Apply for 10,500+ tok/s code editing with lazy markers, WarpGrep for fast agentic codebase search (+4% on SWE-Bench Pro, -15% cost), Public Repo Context for searching GitHub repos without cloning, and Compaction for 25,000+ tok/s context compression in sub-2s.",
+      "stars": 500,
+      "downloads": "5.0k",
+      "rating": 4.9,
+      "category": "code-editing",
+      "categoryLabel": "Code Editing",
+      "features": [
+        "Fast Apply (10,500+ tok/s)",
+        "WarpGrep codebase search",
+        "Public Repo Context search",
+        "Automatic compaction",
+        "Lazy marker code merging"
+      ],
+      "installCommand": "npm install opencode-morph-plugin",
+      "npmPackage": "opencode-morph-plugin",
+      "githubUrl": "https://github.com/morphllm/opencode-morph-plugin",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Best for large files (300+ lines) and multiple scattered changes"
+    },
+    {
+      "rank": 3,
+      "name": "opencode-tool-search",
+      "displayName": "Tool Search",
+      "shortName": "Tool Search",
+      "description": "Implements Claude's Tool Search pattern — BM25 + regex search to discover tools on demand, reducing context usage by 69-85%.",
+      "longDescription": "An OpenCode plugin that implements Claude's Tool Search Tool pattern. Reduces context usage by deferring tool descriptions and letting the model discover tools on demand via BM25 keyword search or regex matching. Inspired by famitzsy8/opencode-tool-search-tool.",
+      "stars": 120,
+      "downloads": "1.2k",
+      "rating": 4.6,
+      "category": "token-optimization",
+      "categoryLabel": "Token Optimization",
+      "features": [
+        "BM25 keyword search",
+        "Regex search (case-insensitive)",
+        "Deferred tool descriptions",
+        "Configurable search limit",
+        "Works with MCP servers"
+      ],
+      "installCommand": "npm install opencode-tool-search",
+      "npmPackage": "opencode-tool-search",
+      "githubUrl": "https://github.com/M0Rf30/opencode-tool-search",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Reduces context usage by 69-85% by deferring tool descriptions"
+    },
+    {
+      "rank": 4,
+      "name": "opencode-model-fallback",
+      "displayName": "Model Fallback",
+      "shortName": "Model Fallback",
+      "description": "Automatic model fallback plugin for OpenCode. When a model API call fails, the plugin transparently switches to the next model in a configured fallback chain.",
+      "longDescription": "When a primary model becomes rate-limited, overloaded, times out, or hits a configured 5xx path, the plugin automatically redirects or replays the message with the next healthy model in your fallback chain. It helps keep OpenCode sessions running when GPT, Claude, Gemini, and other providers temporarily stop accepting requests.",
+      "stars": 85,
+      "downloads": "2.5k",
+      "rating": 4.7,
+      "category": "reliability",
+      "categoryLabel": "Reliability",
+      "features": [
+        "Automatic fallback on rate limits",
+        "Per-agent fallback chains",
+        "Global model health tracking",
+        "TTFT timeout (Time-to-first-token)",
+        "Cooldown & auto-recovery",
+        "Toast notifications"
+      ],
+      "installCommand": "npm install opencode-model-fallback",
+      "npmPackage": "opencode-model-fallback",
+      "githubUrl": "https://github.com/Smart-Coders-HQ/opencode-model-fallback",
+      "homepage": "https://www.npmjs.com/package/@smart-coders-hq/opencode-model-fallback",
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "useCase": "Critical for production use to prevent downtime from rate limits"
+    },
+    {
+      "rank": 5,
+      "name": "oh-my-opencode",
+      "displayName": "Oh My OpenCode",
+      "shortName": "Oh My OpenCode",
+      "description": "Full multi-agent orchestration harness with background agents, pre-built LSP/AST/MCP tools, curated agents, and Claude Code compatibility.",
+      "longDescription": "Slimmed-down fork of oh-my-opencode focused on core agent orchestration. Features specialized sub-agents (Explorer, Oracle, Librarian, Designer, etc.), background task management, LSP/AST tools, tmux integration for live agent visibility, and MCP servers. Optimized to consume significantly fewer tokens.",
+      "stars": 420,
+      "downloads": "3.8k",
+      "rating": 4.8,
+      "category": "multi-agent",
+      "categoryLabel": "Multi-Agent",
+      "features": [
+        "Specialized sub-agents",
+        "Background task management",
+        "LSP/AST tools",
+        "tmux integration",
+        "MCP servers support",
+        "Claude Code compatible"
+      ],
+      "installCommand": "npm install oh-my-opencode",
+      "npmPackage": "oh-my-opencode",
+      "githubUrl": "https://github.com/awesome-opencode/oh-my-opencode",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Best for complex multi-agent workflows and parallel coding tasks"
+    },
+    {
+      "rank": 6,
+      "name": "opencode-background-agents",
+      "displayName": "Background Agents",
+      "shortName": "Bg Agents",
+      "description": "Claude Code-style background agents for OpenCode with async delegation and context persistence.",
+      "longDescription": "Claude Code-style background agents for OpenCode – async delegation with context persistence. Enables running multiple background agents that can handle tasks asynchronously while maintaining context across sessions.",
+      "stars": 180,
+      "downloads": "2.1k",
+      "rating": 4.5,
+      "category": "multi-agent",
+      "categoryLabel": "Multi-Agent",
+      "features": [
+        "Async delegation",
+        "Context persistence",
+        "Background task execution",
+        "Claude Code style",
+        "Multiple agent support"
+      ],
+      "installCommand": "npm install opencode-background-agents",
+      "npmPackage": "opencode-background-agents",
+      "githubUrl": "https://github.com/kdcokenny/opencode-background-agents",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Run background tasks without blocking main agent workflow"
+    },
+    {
+      "rank": 7,
+      "name": "claude-code-safety-net",
+      "displayName": "Safety Net",
+      "shortName": "Safety Net",
+      "description": "Safety net plugin that catches destructive git and filesystem commands before they execute. 9.3k downloads with 5.0 rating.",
+      "longDescription": "A Claude Code plugin that acts as a safety net, catching destructive git and filesystem commands before they execute. Prevents accidental deletions, force pushes, and destructive file operations.",
+      "stars": 320,
+      "downloads": "9.3k",
+      "rating": 5.0,
+      "category": "safety",
+      "categoryLabel": "Safety",
+      "features": [
+        "Catches destructive git commands",
+        "Prevents accidental file deletions",
+        "Blocks force pushes",
+        "Confirmation prompts",
+        "Whitelist support"
+      ],
+      "installCommand": "npm install claude-code-safety-net",
+      "npmPackage": "claude-code-safety-net",
+      "githubUrl": "https://github.com/kenryu42/claude-code-safety-net",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Essential for preventing catastrophic mistakes in production"
+    },
+    {
+      "rank": 8,
+      "name": "opencode-openai-codex-auth",
+      "displayName": "OpenAI Codex Auth",
+      "shortName": "Codex Auth",
+      "description": "Use your ChatGPT Plus/Pro subscription instead of API credits. Significant cost savings for existing subscribers.",
+      "longDescription": "OpenCode plugin that brings GitHub Copilot's custom instructions and skills system to OpenCode. If you already have Copilot customization files set up, they work in OpenCode with no changes.",
+      "stars": 250,
+      "downloads": "4.5k",
+      "rating": 4.7,
+      "category": "authentication",
+      "categoryLabel": "Authentication",
+      "features": [
+        "OAuth with OpenAI",
+        "Use ChatGPT Plus/Pro",
+        "No API credits needed",
+        "Automatic token refresh",
+        "Session management"
+      ],
+      "installCommand": "npm install opencode-openai-codex-auth",
+      "npmPackage": "opencode-openai-codex-auth",
+      "githubUrl": "https://github.com/mailshieldai/opencode-openai-codex-auth",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Save costs by using existing ChatGPT subscription for OpenCode"
+    },
+    {
+      "rank": 9,
+      "name": "opencode-copilot-plugin",
+      "displayName": "Copilot Integration",
+      "shortName": "Copilot",
+      "description": "Brings GitHub Copilot's custom instructions, skills, agents, and hooks system into OpenCode.",
+      "longDescription": "An OpenCode plugin that brings GitHub Copilot's custom instruction, prompt, skill, agent, and hook file system into OpenCode. If you already have Copilot customization files set up, they work in OpenCode with no changes.",
+      "stars": 180,
+      "downloads": "3.2k",
+      "rating": 4.6,
+      "category": "integration",
+      "categoryLabel": "Integration",
+      "features": [
+        "Repo-wide instructions (.github/copilot-instructions.md)",
+        "Path-specific instructions",
+        "Custom skills support",
+        "Custom agents support",
+        "Hook scripts execution",
+        "Slash commands (/copilot-inspect, /copilot-prompt)"
+      ],
+      "installCommand": "npm install opencode-copilot-plugin",
+      "npmPackage": "opencode-copilot-plugin",
+      "githubUrl": "https://github.com/opencode-copilot-plugin",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Leverage existing Copilot customizations in OpenCode"
+    },
+    {
+      "rank": 10,
+      "name": "opencode-notify",
+      "displayName": "Native Notifications",
+      "shortName": "Notify",
+      "description": "Native OS desktop notifications for OpenCode — know when tasks complete without staring at the terminal.",
+      "longDescription": "Native OS notifications for OpenCode – know when tasks complete. Supports desktop notifications and sound alerts for OpenCode sessions, permission, completion, and error events.",
+      "stars": 95,
+      "downloads": "2.8k",
+      "rating": 4.4,
+      "category": "developer-experience",
+      "categoryLabel": "Developer Experience",
+      "features": [
+        "Desktop notifications",
+        "Sound alerts",
+        "Task completion notifications",
+        "Error notifications",
+        "Permission events",
+        "Customizable sounds"
+      ],
+      "installCommand": "npm install opencode-notify",
+      "npmPackage": "opencode-notify",
+      "githubUrl": "https://github.com/kdcokenny/opencode-notify",
+      "homepage": "",
+      "language": "TypeScript",
+      "license": "MIT",
+      "useCase": "Stay informed when long-running tasks complete"
+    }
+  ],
+  "honorableMentions": [
+    {
+      "name": "opencode-gemini-auth",
+      "displayName": "Gemini Auth",
+      "description": "Use existing Gemini plan instead of API billing",
+      "category": "authentication"
+    },
+    {
+      "name": "opencode-snip",
+      "displayName": "Shell Snip",
+      "description": "60-90% token reduction on shell command output",
+      "category": "token-optimization"
+    },
+    {
+      "name": "opencode-mystatus",
+      "displayName": "My Status",
+      "description": "Check all AI subscription quotas in one command",
+      "category": "developer-experience"
+    },
+    {
+      "name": "opencode-wakatime",
+      "displayName": "WakaTime",
+      "description": "Track OpenCode usage with WakaTime",
+      "category": "developer-experience"
+    },
+    {
+      "name": "opencode-sentry-monitor",
+      "displayName": "Sentry Monitor",
+      "description": "Trace and debug AI agents with Sentry AI Monitoring",
+      "category": "monitoring"
+    },
+    {
+      "name": "opencode-daytona",
+      "displayName": "Daytona",
+      "description": "Run OpenCode sessions in isolated Daytona sandboxes",
+      "category": "isolation"
+    },
+    {
+      "name": "opencode-devcontainers",
+      "displayName": "Dev Containers",
+      "description": "Multi-branch devcontainer isolation with auto-assigned ports",
+      "category": "isolation"
+    },
+    {
+      "name": "opencode-worktree",
+      "displayName": "Git Worktree",
+      "description": "Zero-friction git worktrees with auto-spawned terminals",
+      "category": "git"
+    }
+  ],
+  "ecosystem": {
+    "officialDocs": "https://opencode.ai/docs/ecosystem/",
+    "communityRegistry": "https://opencode.im/plugins",
+    "awesomeList": "https://awesomeopencode.com/",
+    "marketplace": "https://opencode.cafe/"
+  }
+}

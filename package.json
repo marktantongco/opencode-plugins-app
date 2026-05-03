@@ -1,0 +1,24 @@
+{
+  "name": "opencode-plugins-app",
+  "version": "1.0.0",
+  "description": "Editorial layout web app showcasing Top 10 OpenCode Plugins with GSAP animations",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "opencode",
+    "plugins",
+    "gsap",
+    "editorial",
+    "fullstack"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
+  }
+}
